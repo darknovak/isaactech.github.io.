@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>Hello, World!</title>
+</head>
+<body>
+  <h1>
+    
+  </h1>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isaac Tech - Site Dinâmico</title>
+    <link rel="stylesheet" href="styles_funn.css"> <!-- Link para seu arquivo CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 20px;
+            transition: background-color 0.5s;
+        }
+
+        .alert {
+            display: none; /* Escondido por padrão */
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 20px; /* Tamanho da fonte do alerta */
+        }
+
+        .offline-alert {
+            background-color: #ff4d4d; /* Cor de fundo vermelho para offline */
+        }
+
+        .online-alert {
+            background-color: #4CAF50; /* Cor de fundo verde para online */
+        }
+
+        #clock {
+            font-size: 30px;
+            margin: 20px 0;
+        }
+
+        #toggleTheme {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Bem-vindo ao Isaac Tech</h1>
+
+<!-- Área do alerta de offline e online -->
+<div id="alert" class="alert"></div>
+
+<!-- Exibir o relógio dinâmico -->
+<div id="clock"></div>
+
+<!-- Botão para alternar tema -->
+<button id="toggleTheme">THEMR</button>
+
+<script>
+    // Função para atualizar o status de conexão
+    function updateConnectionStatus() {
+        const alertElement = document.getElementById('alert');
+        if (navigator.onLine) {
+            alertElement.className = 'alert online-alert'; // Classe para online
+            alertElement.innerText = 'Você está online! Conexão estabelecida.';
+            alertElement.style.display = 'block'; // Mostrar alerta
+        } else {
+            alertElement.className = 'alert offline-alert'; // Classe para offline
+            alertElement.innerText = 'Você está offline! Verifique sua conexão à Internet.';
+            alertElement.style.display = 'block'; // Mostrar alerta
+        }
+    }
+
+    // Função para atualizar o relógio
+    function updateClock() {
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+        document.getElementById('clock').innerText = `${hours}:${minutes}:${seconds}`;
+    }
+
+    // Função para alternar tema
+    function toggleTheme() {
+        const body = document.body;
+        body.style.backgroundColor = body.style.backgroundColor === 'black' ? '#f4f4f4' : 'black';
+        body.style.color = body.style.color === 'white' ? 'black' : 'white';
+    }
+
+    // Inicializa o relógio
+    setInterval(updateClock, 1000); // Atualiza o relógio a cada segundo
+    updateClock(); // Chama a função uma vez ao carregar a página
+
+    // Verifica o status de conexão ao carregar a página
+    window.onload = () => {
+        updateConnectionStatus();
+        updateClock();
+    };
+
+    // Escuta eventos de online e offline
+    window.addEventListener('online', updateConnectionStatus);
+    window.addEventListener('offline', updateConnectionStatus);
+
+    // Escuta o clique do botão para alternar tema
+    document.getElementById('toggleTheme').addEventListener('click', toggleTheme);
+</script>
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conteúdo sobre Hacking - Isaac Tech</title>
+    <link rel="stylesheet" href="styles_funn.css"> <!-- Link para seu arquivo CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            color: #4CAF50; /* Cor para títulos */
+        }
+
+        p {
+            margin: 15px 0;
+            line-height: 1.6;
+        }
+
+        ul {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Hacking: O Que Você Precisa Saber</h1>
+
+<h2>O que é Hacking?</h2>
+<p>Hacking é o ato de explorar, modificar ou manipular sistemas e redes de computadores. Embora o termo seja frequentemente associado a atividades ilegais, nem todo hacking é malicioso. Existem diferentes tipos de hackers, como:</p>
+<ul>
+    <li><strong>Hackers Éticos:</strong> Profissionais que usam suas habilidades para ajudar empresas a proteger seus sistemas.</li>
+    <li><strong>Hackers Maliciosos:</strong> Indivíduos que invadem sistemas com intenções criminosas.</li>
+    <li><strong>Hackers de "White Hat":</strong> Hackers éticos que trabalham para descobrir vulnerabilidades e ajudar a melhorar a segurança.</li>
+    <li><strong>Hackers de "Black Hat":</strong> Hackers que exploram vulnerabilidades para benefício pessoal ou para causar danos.</li>
+</ul>
+
+<h2>Técnicas Comuns de Hacking</h2>
+<p>Os hackers podem usar várias técnicas para invadir sistemas, incluindo:</p>
+<ul>
+    <li><strong>Phishing:</strong> Método de enganar usuários para que revelem informações pessoais, geralmente através de e-mails falsos.</li>
+    <li><strong>SQL Injection:</strong> Técnica que permite a execução de comandos SQL não autorizados em um banco de dados.</li>
+    <li><strong>Malware:</strong> Software malicioso projetado para danificar ou obter acesso a sistemas e redes.</li>
+    <li><strong>Exploração de Vulnerabilidades:</strong> Aproveitar falhas de segurança em softwares ou sistemas operacionais.</li>
+</ul>
+
+<h2>Dicas de Segurança</h2>
+<p>Para se proteger contra ataques de hackers, é essencial seguir algumas práticas de segurança, como:</p>
+<ul>
+    <li><strong>Use Senhas Fortes:</strong> Combine letras, números e símbolos, e evite usar informações pessoais.</li>
+    <li><strong>Atualize Regularmente:</strong> Mantenha sistemas e softwares atualizados para corrigir vulnerabilidades conhecidas.</li>
+    <li><strong>Use Autenticação em Dois Fatores:</strong> Adicione uma camada extra de segurança às suas contas online.</li>
+    <li><strong>Tenha Cuidado com Links e E-mails:</strong> Não clique em links suspeitos ou forneça informações pessoais a fontes desconhecidas.</li>
+</ul>
+
+<h2>Conclusão</h2>
+<p>O hacking é um campo complexo que pode ter tanto um lado positivo quanto negativo. Compreender as técnicas e práticas de segurança é crucial para proteger seus dados e sistemas. Sempre busque aprender e se manter informado sobre as melhores práticas de segurança cibernética.</p>
+
+</body>
+</html>
+</body>
+</html>

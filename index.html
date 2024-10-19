@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" href="styles/style.css"/>
+  <title>Isaac Tech</title>
+</head>
+<body>
+  <h1>
+    
+  </h1>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificação de Conexão</title>
+    <link rel="stylesheet" href="styles_funn.css"> <!-- Link para seu arquivo CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        .alert {
+            display: none; /* Escondido por padrão */
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 20px; /* Tamanho da fonte do alerta */
+        }
+
+        .offline-alert {
+            background-color: #ff4d4d; /* Cor de fundo vermelho para offline */
+        }
+
+        .online-alert {
+            background-color: #4CAF50; /* Cor de fundo verde para online */
+        }
+    </style>
+</head>
+<body>
+
+
+
+<!-- Área do alerta de offline e online -->
+<div id="alert" class="alert"></div>
+
+<script>
+    // Função para atualizar o status de conexão
+    function updateConnectionStatus() {
+        const alertElement = document.getElementById('alert');
+        if (navigator.onLine) {
+            alertElement.className = 'alert online-alert'; // Classe para online
+            alertElement.innerText = 'Você está online! Conexão estabelecida.';
+            alertElement.style.display = 'block'; // Mostrar alerta
+        } else {
+            alertElement.className = 'alert offline-alert'; // Classe para offline
+            alertElement.innerText = 'Você está offline! Verifique sua conexão à Internet.';
+            alertElement.style.display = 'block'; // Mostrar alerta
+        }
+    }
+
+    // Verifica o status de conexão ao carregar a página
+    window.onload = updateConnectionStatus;
+
+    // Escuta eventos de online e offline
+    window.addEventListener('online', updateConnectionStatus);
+    window.addEventListener('offline', updateConnectionStatus);
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificação de Conexão</title>
+    <link rel="stylesheet" href="styles_funn.css"> <!-- Link para seu arquivo CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        .offline-alert {
+            display: none; /* Escondido por padrão */
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            color: #fff;
+            background-color: #ff4d4d; /* Cor de fundo do alerta */
+            font-size: 20px; /* Tamanho da fonte do alerta */
+        }
+    </style>
+</head>
+<body>
+
+<h1>Bem-vindo ao Isaac Tech</h1>
+
+<!-- Área do alerta de offline -->
+<div id="offlineAlert" class="offline-alert">
+    Você está offline! Verifique sua conexão à Internet.
+</div>
+
+<script>
+    // Função para verificar a conexão
+    function updateOnlineStatus() {
+        const onlineAlert = document.getElementById('onlineAlert');
+        if (navigator.onLine) {
+            onlineAlert.style.display = 'none'; // Mostrar alerta se estiver online
+        } else {
+            offlineAlert.style.display = 'none'; // Mostrar alerta se estiver offline
+        }
+    }
+
+    // Verifica o status de conexão ao carregar a página
+    window.onload = updateOnlineStatus;
+
+    // Escuta eventos de online e offline
+    window.addEventListener('online', updateOnlineStatus);
+    window.addEventListener('offline', updateOnlineStatus);
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isaac Tech • HTML, CSS e JS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Isaac Tech</h1>
+        <nav>
+            <ul>
+                <li><a href="#html">HTML</a></li>
+                <li><a href="#css">CSS</a></li>
+                <li><a href="#js">JavaScript</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Seção HTML -->
+        <section id="html">
+            <h2>O que é HTML?</h2>
+            <p>HTML (HyperText Markup Language) é a linguagem que define a estrutura de uma página web. Ela organiza o conteúdo em elementos como cabeçalhos, parágrafos, imagens, e links.</p>
+            
+            <h3>Elementos Importantes do HTML</h3>
+            <ul>
+                <li><strong>&lt;h1&gt; a &lt;h6&gt;</strong>: Tags de cabeçalhos que organizam a hierarquia de títulos.</li>
+                <li><strong>&lt;p&gt;</strong>: Define um parágrafo.</li>
+                <li><strong>&lt;a&gt;</strong>: Cria links entre páginas. Exemplo:
+                    <pre><code>&lt;a href="https://www.google.com"&gt;Visite o Google&lt;/a&gt;</code></pre>
+                </li>
+                <li><strong>&lt;img&gt;</strong>: Insere imagens na página. Exemplo:
+                    <pre><code>&lt;img src="imagem.jpg" alt="Descrição da Imagem"&gt;</code></pre>
+                </li>
+                <li><strong>&lt;div&gt;</strong>: Um contêiner genérico que agrupa outros elementos.</li>
+            </ul>
+
+            <h3>Estrutura Básica de um Documento HTML</h3>
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Título da Página&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Bem-vindo ao Isaac Tech&lt;/h1&gt;
+    &lt;p&gt;Este é um exemplo básico de HTML.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+            </code></pre>
+        </section>
+
+        <!-- Seção CSS -->
+        <section id="css">
+            <h2>O que é CSS?</h2>
+            <p>CSS (Cascading Style Sheets) é uma linguagem de estilo usada para descrever a apresentação de um documento HTML. Ela controla a aparência e o layout dos elementos.</p>
+
+            <h3>Principais Propriedades do CSS</h3>
+            <ul>
+                <li><strong>color</strong>: Define a cor do texto. Exemplo:
+                    <pre><code>h1 { color: blue; }</code></pre>
+                </li>
+                <li><strong>background-color</strong>: Define a cor de fundo de um elemento. Exemplo:
+                    <pre><code>body { background-color: lightgrey; }</code></pre>
+                </li>
+                <li><strong>font-family</strong>: Especifica a fonte do texto. Exemplo:
+                    <pre><code>p { font-family: 'Arial', sans-serif; }</code></pre>
+                </li>
+                <li><strong>margin</strong>: Define o espaço ao redor dos elementos. Exemplo:
+                    <pre><code>div { margin: 20px; }</code></pre>
+                </li>
+                <li><strong>padding</strong>: Define o espaço interno de um elemento. Exemplo:
+                    <pre><code>div { padding: 15px; }</code></pre>
+                </li>
+            </ul>
+
+            <h3>Exemplo de CSS Completo</h3>
+            <pre><code>body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: #4CAF50;
+    text-align: center;
+}
+
+p {
+    color: #333;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+            </code></pre>
+        </section>
+
+        <!-- Seção JavaScript -->
+        <section id="js">
+            <h2>O que é JavaScript?</h2>
+            <p>JavaScript é uma linguagem de programação que permite adicionar funcionalidades dinâmicas e interatividade a uma página web. Com JS, você pode modificar o HTML e CSS em tempo real.</p>
+
+            <h3>Conceitos Básicos de JavaScript</h3>
+            <ul>
+                <li><strong>Variáveis</strong>: Armazenam dados. Exemplo:
+                    <pre><code>let nome = "Isaac";</code></pre>
+                </li>
+                <li><strong>Funções</strong>: Executam uma ação. Exemplo:
+                    <pre><code>function saudacao() {
+    alert("Olá, " + nome);
+}</code></pre>
+                </li>
+                <li><strong>Eventos</strong>: Interagem com o usuário. Exemplo:
+                    <pre><code>document.getElementById("meuBotao").addEventListener("click", saudacao);</code></pre>
+                </li>
+            </ul>
+
+            <h3>Exemplo Completo de Interatividade</h3>
+            <pre><code>&lt;button id="meuBotao"&gt;Clique aqui&lt;/button&gt;
+
+&lt;script&gt;
+let nome = "Isaac";
+
+function saudacao() {
+    alert("Olá, " + nome);
+}
+
+document.getElementById("meuBotao").addEventListener("click", saudacao);
+&lt;/script&gt;
+            </code></pre>
+        </section>
+    </main>
+
+    <footer>
+      <a href="web pág .html">≈TECH-FUNCION≈</a>
+        <p>&copy; 2024 Isaac Tech • Aprenda HTML, CSS e JavaScript</p>
+    </footer>
+</body>
+</html>

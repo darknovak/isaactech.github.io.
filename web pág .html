@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>Hello, World!</title>
+</head>
+<body>
+  <h1>
+   
+  </h1>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificação de Conexão</title>
+    <link rel="stylesheet" href="styles_funn.css"> <!-- Link para seu arquivo CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        .alert {
+            display: none; /* Escondido por padrão */
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 20px; /* Tamanho da fonte do alerta */
+        }
+
+        .offline-alert {
+            background-color: #ff4d4d; /* Cor de fundo vermelho para offline */
+        }
+
+        .online-alert {
+            background-color: #4CAF50; /* Cor de fundo verde para online */
+        }
+    </style>
+</head>
+<body>
+
+<h1>Bem-vindo ao Isaac Tech</h1>
+
+<!-- Área do alerta de offline e online -->
+<div id="alert" class="alert"></div>
+
+<script>
+    // Função para atualizar o status de conexão
+    function updateConnectionStatus() {
+        const alertElement = document.getElementById('alert');
+        if (navigator.onLine) {
+            alertElement.className = 'alert online-alert'; // Classe para online
+            alertElement.innerText = 'Você está online! Conexão estabelecida.';
+            alertElement.style.display = 'block'; // Mostrar alerta
+        } else {
+            alertElement.className = 'alert offline-alert'; // Classe para offline
+            alertElement.innerText = 'Você está offline! Verifique sua conexão à Internet.';
+            alertElement.style.display = 'block'; // Mostrar alerta
+        }
+    }
+
+    // Verifica o status de conexão ao carregar a página
+    window.onload = updateConnectionStatus;
+
+    // Escuta eventos de online e offline
+    window.addEventListener('online', updateConnectionStatus);
+    window.addEventListener('offline', updateConnectionStatus);
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conteúdos Avançados de HTML e CSS</title>
+    <link rel="stylesheet" href="styles_funns.css">
+</head>
+<body>
+    <header>
+        <h1>Conteúdos Avançados de HTML e CSS</h1>
+        <nav>
+            <a href="index.html">Voltar para a Página Inicial</a>
+        </nav>
+    </header>
+<a href="isaac Tech .html">Acesse a outra página sobre criador do site</a>
+    <main>
+        <!-- Seção HTML Avançado -->
+        <section>
+            <h2>HTML Avançado</h2>
+            <p>O HTML (HyperText Markup Language) é a linguagem de marcação usada para criar páginas web. Vamos explorar alguns conceitos avançados que ajudam a desenvolver páginas mais acessíveis, semânticas e com melhor desempenho.</p>
+            
+            <h3>Formulários Avançados em HTML</h3>
+            <p>Os formulários são uma parte fundamental das interações web. Aqui estão alguns atributos e elementos avançados que tornam os formulários mais eficientes:</p>
+            <ul>
+                <li><code>&lt;input type="email"&gt;</code> – Valida automaticamente se o valor inserido é um email válido.</li>
+                <li><code>&lt;input type="tel"&gt;</code> – Indica que o campo espera um número de telefone.</li>
+                <li><code>&lt;input pattern="regex"&gt;</code> – Valida o campo com base em expressões regulares (regex).</li>
+            </ul>
+
+            <h3>Elementos Semânticos</h3>
+            <p>Usar elementos semânticos melhora a acessibilidade e SEO da página. Alguns exemplos são:</p>
+            <ul>
+                <li><code>&lt;article&gt;</code> – Define uma seção de conteúdo independente e autodeterminada.</li>
+                <li><code>&lt;section&gt;</code> – Usado para agrupar conteúdo tematicamente relacionado.</li>
+                <li><code>&lt;aside&gt;</code> – Representa uma seção de conteúdo tangencial ao conteúdo principal.</li>
+                <li><code>&lt;footer&gt;</code> – Marca a parte inferior da página ou de uma seção.</li>
+            </ul>
+
+            <h3>Imagens e Vídeos Responsivos</h3>
+            <p>Para melhorar o desempenho e a experiência do usuário, é importante usar imagens e vídeos responsivos que se ajustem ao tamanho da tela do dispositivo.</p>
+            <pre><code>&lt;img srcset="imagem-pequena.jpg 480w, imagem-media.jpg 800w, imagem-grande.jpg 1200w" alt="Descrição da imagem"&gt;</code></pre>
+            <p>O atributo <code>srcset</code> permite que o navegador escolha a melhor imagem para carregar com base no tamanho da tela.</p>
+        </section>
+
+        <!-- Seção CSS Avançado -->
+        <section>
+            <h2>CSS Avançado</h2>
+            <p>O CSS (Cascading Style Sheets) é usado para estilizar a estrutura criada pelo HTML. Vamos ver algumas técnicas avançadas para melhorar o layout e a interatividade das páginas web.</p>
+            
+            <h3>Layouts com Flexbox e Grid</h3>
+            <p>Flexbox e Grid são duas ferramentas poderosas para criar layouts complexos e responsivos sem a necessidade de hacks antigos como float ou inline-block.</p>
+            <h4>Exemplo de Flexbox:</h4>
+            <pre><code>
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}</code></pre>
+
+            <h4>Exemplo de Grid:</h4>
+            <pre><code>
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+}</code></pre>
+            <p>O Grid Layout permite criar layouts bidimensionais mais flexíveis, distribuindo elementos em colunas e linhas com facilidade.</p>
+
+            <h3>Animações e Transições</h3>
+            <p>CSS permite adicionar animações suaves e transições entre estados. Por exemplo, para animar a cor de um botão quando o usuário passa o mouse:</p>
+            <pre><code>
+button {
+    background-color: #4CAF50;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}</code></pre>
+            <p>As transições tornam a interface mais suave, e as animações podem ser aplicadas para criar interações mais dinâmicas.</p>
+
+            <h3>Media Queries e Responsividade</h3>
+            <p>As media queries permitem que a página se adapte a diferentes tamanhos de tela. Aqui está um exemplo de como alterar o layout de uma página para dispositivos móveis:</p>
+            <pre><code>
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column;
+    }
+}</code></pre>
+            <p>Isso garante que o site seja acessível e utilizável em dispositivos de todos os tamanhos, desde desktops até smartphones.</p>
+        </section>
+    </main>
+
+    <footer>
+      <script src="alerta.js"></script>
+        <p>&copy; 2024 Isaac Tech • Aprenda HTML e CSS Avançados</p>
+    </footer>
+</body>
+</html>

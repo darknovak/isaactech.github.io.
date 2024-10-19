@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>isaac tech</title>
+</head>
+<body>
+  <h1>
+    
+  </h1>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificação de Conexão</title>
+    <link rel="stylesheet" href="styles_funn.css"> <!-- Link para seu arquivo CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        .alert {
+            display: none; /* Escondido por padrão */
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 20px; /* Tamanho da fonte do alerta */
+        }
+
+        .offline-alert {
+            background-color: #ff4d4d; /* Cor de fundo vermelho para offline */
+        }
+
+        .online-alert {
+            background-color: #4CAF50; /* Cor de fundo verde para online */
+        }
+    </style>
+</head>
+<body>
+
+<h1>Bem-vindo ao Isaac Tech</h1>
+
+<!-- Área do alerta de offline e online -->
+<div id="alert" class="alert"></div>
+
+<script>
+    // Função para atualizar o status de conexão
+    function updateConnectionStatus() {
+        const alertElement = document.getElementById('alert');
+        if (navigator.onLine) {
+            alertElement.className = 'alert online-alert'; // Classe para online
+            alertElement.innerText = 'Você está online! Conexão estabelecida.';
+            alertElement.style.display = 'block'; // Mostrar alerta
+        } else {
+            alertElement.className = 'alert offline-alert'; // Classe para offline
+            alertElement.innerText = 'Você está offline! Verifique sua conexão à Internet.';
+            alertElement.style.display = 'block'; // Mostrar alerta
+        }
+    }
+
+    // Verifica o status de conexão ao carregar a página
+    window.onload = updateConnectionStatus;
+
+    // Escuta eventos de online e offline
+    window.addEventListener('online', updateConnectionStatus);
+    window.addEventListener('offline', updateConnectionStatus);
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Alerta Dinâmico</title>
+    <link rel="stylesheet" href="styles_funn.css"> <!-- Link para seu arquivo CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .alert {
+            display: none; /* Escondido por padrão */
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            color: #fff;
+            background-color: #ff4d4d; /* Cor de fundo do alerta */
+            font-size: 20px; /* Tamanho da fonte do alerta */
+            transition: all 0.5s ease; /* Transição suave */
+        }
+        
+        .show {
+            display: block; /* Mostra o alerta */
+        }
+
+        /* Estilos para diferentes tipos de alerta */
+        .info {
+            background-color: #4CAF50; /* Cor de fundo verde */
+        }
+
+        .warning {
+            background-color: #ffcc00; /* Cor de fundo amarelo */
+        }
+    </style>
+</head>
+<body>
+
+<h1>Alerta Dinâmico com JavaScript</h1>
+
+<!-- Botão para ativar o alerta -->
+<button onclick="showAlert('Estás online', 'info')">©</button>
+
+<!-- Área do alerta -->
+<div id="alert" class="alert"></div>
+
+<script>
+    // Função para mostrar o alerta dinâmico
+    function showAlert(message, type) {
+        const alertElement = document.getElementById('alert');
+        alertElement.innerText = message;
+
+        // Ajusta a classe do alerta de acordo com o tipo
+        alertElement.className = 'alert ' + type + ' show';
+
+        // Oculta o alerta após 1 segundos
+        setTimeout(() => {
+            alertElement.classList.remove('show');
+        }, 3000);
+    }
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Isaac Muaco</title>
+    <link rel="stylesheet" href="styles_funns.css"> <!-- Link para seu arquivo CSS -->
+    <style>
+        .container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .photo {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin: 20px auto;
+            border: 3px solid #4CAF50;
+        }
+
+        .bio {
+            text-align: left;
+            margin: 20px auto;
+            max-width: 800px;
+            line-height: 1.8;
+            font-size: 18px;
+        }
+
+        .bio strong {
+            color: #4CAF50;
+        }
+
+        .info {
+            margin: 20px 0;
+            font-size: 18px;
+        }
+
+        .info a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        .clock {
+            font-size: 2em;
+            margin-top: 20px;
+            color: #4CAF50;
+        }
+
+        .search-icon {
+            font-size: 30px;
+            color: white;
+            padding: 10px;
+            background-color: #4CAF50;
+            border-radius: 50%;
+            margin-top: 20px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Isaac Muaco - Desenvolvedor de Sites e Estudante</h1>
+</header>
+
+<main class="container">
+    <!-- Foto do Isaac -->
+    <img src="sua-foto.png" alt="Foto de Isaac Muaco" class="photo">
+
+    <!-- Biografia extensa -->
+    <div class="bio">
+        <p>
+            <strong>Isaac Muaco</strong>, um jovem apaixonado por tecnologia e programação, começou sua jornada no desenvolvimento de sites aos 15 anos. Estudante dedicado no <strong>Instituto Privado do Sequele</strong>, Isaac sempre teve uma curiosidade natural por como as coisas funcionam na internet. Ele rapidamente mergulhou no mundo do <strong>HTML, CSS e JavaScript</strong>, dominando as bases dessas linguagens para construir sites funcionais e dinâmicos.
+        </p>
+        
+        <p>
+            Uma de suas primeiras criações, o site <strong>ERLEAN SIDE</strong>, reflete sua habilidade de inovar e trazer funcionalidades avançadas, como logins com verificação de email, acesso seguro e a implementação de designs complexos com efeitos de estrelas brilhantes em texto. Seu talento é evidente não só no design, mas também na estruturação dos conteúdos educacionais que ele incorpora, como guias de programação, algoritmos e desenvolvimento de sites, ajudando iniciantes a entrar no campo com confiança.
+        </p>
+
+        <p>
+            Além de ser um <strong>desenvolvedor autodidata</strong>, Isaac é um líder em projetos colaborativos. Ele lidera o <strong>Grupo 1</strong> em sua classe para trabalhos importantes sobre unidades de controle e funções de ALU. Seu trabalho em equipe se destaca não só na escola, mas também na forma como ele colabora com amigos e colegas para melhorar suas habilidades e expandir seus conhecimentos. Isaac está sempre atualizado com as últimas tendências em tecnologia e nunca para de buscar novas maneiras de se aperfeiçoar.
+        </p>
+
+        <p>
+            Com seu site de alertas de segurança, o <strong>Alert Phone +</strong>, Isaac cria uma plataforma dedicada a alertas sobre vírus que afetam telefones, misturando funcionalidade com um design atrativo e moderno. A interface dinâmica do site, combinada com recursos de interação online e doações, demonstra sua visão de como as plataformas digitais podem ser úteis, seguras e atraentes para os usuários.
+        </p>
+
+        <p>
+            Isaac também tem um grande interesse em <strong>interfaces de usuário</strong> e sempre se esforça para criar experiências interativas e visuais cativantes. Seu próximo projeto, o site <strong>CASA ESCURA</strong>, traz um tema dark e inclui uma tela única de gato, além de ser uma representação visual poderosa de sua criatividade no desenvolvimento web.
+        </p>
+
+        <p>
+            Além de seus projetos e criações, Isaac tem uma visão de futuro onde ele se vê trabalhando com grandes empresas de tecnologia, ou até mesmo criando sua própria empresa dedicada ao desenvolvimento de software e segurança cibernética. Ele acredita que o futuro está nas mãos daqueles que conseguem moldar as tecnologias de maneira inovadora, e está sempre buscando novas maneiras de aprender e crescer como profissional.
+        </p>
+
+        <p>
+            <strong>Objetivos Futuros:</strong> Isaac planeja expandir suas habilidades em áreas como <strong>inteligência artificial</strong> e <strong>desenvolvimento full-stack</strong>, permitindo-lhe criar soluções tecnológicas ainda mais robustas e impactantes. Ele está constantemente experimentando novas ferramentas e frameworks para continuar evoluindo como programador.
+        </p>
+
+        <p>
+            Quando não está programando, Isaac gosta de se envolver com a comunidade tecnológica, participando de fóruns online e contribuindo com dicas para novos desenvolvedores. Ele compartilha seu conhecimento tanto em redes sociais como em seu site de dicas, onde ajuda outros jovens a entrarem no mundo do desenvolvimento web com confiança.
+        </p>
+    </div>
+
+    <!-- Informações sobre Isaac -->
+    <div class="info">
+        <p><strong>Email:</strong> <a href="mailto:isaacmuaco582@gmail.com">isaacmuaco582@gmail.com</a></p>
+        <p><strong>Telefone 1:</strong> <a href="tel:+244947541761">+244947541761</a></p>
+        <p><strong>Telefone 2:</strong> <a href="tel:+244943443400">+244943443400</a></p>
+        <p><strong>Facebook:</strong> <a href="https://www.facebook.com/ISAAC.MUACO114" target="_blank">ISAAC.MUACO114</a></p>
+        <p><strong>Instagram:</strong> <a href="https://m.instagram.com/@isaaccunha.4" target="_blank">@isaaccunha.4</a></p>
+    </div>
+
+    <!-- Relógio de Angola -->
+    <div class="clock" id="clock"></div>
+
+    <!-- Ícone de Pesquisa -->
+    <div class="search-icon">
+        🔍
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2024 Isaac Muaco</p>
+</footer>
+
+<script>
+    // Função para mostrar o relógio de Angola
+    function showClock() {
+        const clockElement = document.getElementById('clock');
+        const now = new Date();
+        const options = { timeZone: 'Africa/Luanda', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+        const timeString = now.toLocaleTimeString('pt-PT', options);
+        clockElement.innerText = 'Hora em Angola: ' + timeString;
+    }
+
+    setInterval(showClock, 1000); // Atualiza o relógio a cada segundo
+    showClock(); // Chama a função assim que a página carrega
+</script>
+
+</body>
+</html>
+
